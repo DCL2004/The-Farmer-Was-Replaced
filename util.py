@@ -39,6 +39,8 @@ def easy_move(x,y):
 def easy_move_tuple(tuple):
 	easy_move(tuple[0],tuple[1])
 
-def random_elem(list):
-	index = random() * len(list) // 1
-	return list[index]
+def sleep(t):
+	tracker=get_time()
+	current=get_time()
+	while current-tracker<t:
+		current+=1
