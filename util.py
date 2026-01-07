@@ -1,8 +1,10 @@
-till_list=[Entities.Carrot,Entities.Pumpkin]
-water_list=[Entities.Pumpkin]
+till_list=[Entities.Carrot,Entities.Pumpkin,Entities.Sunflower,Entities.Cactus]
+water_list=[Entities.Pumpkin,Entities.Sunflower]
 fert_list=[Entities.Bush,Entities.Pumpkin]
 
 def easy_plant(plant_type):
+	if can_harvest():
+		harvest()
 	if plant_type in till_list and get_ground_type()!= Grounds.Soil:
 			till()
 	plant(plant_type)
@@ -33,6 +35,9 @@ def easy_move(x,y):
 	else:
 		for i in range(abs(n)):
 			move(South)
+
+def easy_move_tuple(tuple):
+	easy_move(tuple[0],tuple[1])
 
 def random_elem(list):
 	index = random() * len(list) // 1

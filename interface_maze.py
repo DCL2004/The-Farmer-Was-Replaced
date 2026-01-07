@@ -1,7 +1,11 @@
 import generate
 import maze
+import util
 
-while num_items(Items.Gold)<=5000:
-	generate.generate_maze()
-	maze.clear_table()
-	maze.rec(None)
+def maze_inter(num):
+	while num_items(Items.Gold)<=num:
+		generate.generate_maze(5)
+		maze.clear_table()
+		maze.rec(None)
+
+spawn_drone(maze_inter(5000))
