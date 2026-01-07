@@ -1,5 +1,5 @@
 till_list=[Entities.Carrot,Entities.Pumpkin,Entities.Sunflower,Entities.Cactus]
-water_list=[Entities.Pumpkin,Entities.Sunflower]
+water_list=[Entities.Pumpkin,Entities.Sunflower,Entities.Carrot,Entities.Tree]
 fert_list=[Entities.Bush,Entities.Pumpkin]
 
 def easy_plant(plant_type):

@@ -39,7 +39,7 @@ def mass_carrot():
 
 def grass_tree():
 	for _ in range(get_world_size()):
-		if (get_pos_x()+get_pos_y())%4==0:
+		if (get_pos_x()+get_pos_y())%2==0:
 			util.easy_harvest(Entities.Tree)
 		else:
 			util.easy_harvest(Entities.Grass)
@@ -132,8 +132,12 @@ def multi_cactus():
 	harvest() 
 
 def easy_multi(function):
-	while max_drones()-num_drones()>0:
+	for i in range(max_drones()):
 		control.easy_spawn(function)
 		move(East)
-	control.pause()
+
+def scary_multi(function):
+	while True:
+		control.scary_spawn(function)
+		move(East)
 		
