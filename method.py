@@ -18,12 +18,12 @@ def pumpkin_check():
 def pumpkin_rec():
 	if not measure() or measure()<10000:
 		util.easy_harvest(Entities.Pumpkin)
-		return True
+		#return True
 	for dir in [North,East,South,West]:
 		if not measure(dir) or measure(dir)<10000:
 			move(dir)
 			return pumpkin_rec()
-	return False
+	#return False
 
 def mass_pumpkin():
 	while not pumpkin_check():
@@ -39,7 +39,7 @@ def mass_carrot():
 
 def grass_tree():
 	for _ in range(get_world_size()):
-		if (get_pos_x()+get_pos_y())%2==0:
+		if (get_pos_x()+get_pos_y())%4==0:
 			util.easy_harvest(Entities.Tree)
 		else:
 			util.easy_harvest(Entities.Grass)
@@ -81,7 +81,6 @@ def mass_cactus():
 	harvest()
 
 def naive_dinasaur_iter():
-	clear()
 	change_hat(Hats.Dinosaur_Hat)
 	flag=True
 	while flag:
@@ -140,4 +139,15 @@ def scary_multi(function):
 	while True:
 		control.scary_spawn(function)
 		move(East)
-		
+
+def multi_grass_tree():
+	easy_multi(grass_tree)
+
+def multi_carrot():
+	easy_multi(mass_carrot)
+
+def multi_pumpkin():
+	easy_multi(mass_pumpkin)
+
+def multi_sunflower():
+	easy_multi(mass_sunflower)

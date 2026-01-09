@@ -5,7 +5,7 @@ table={}
 
 def rec(last_step,dir_order):
 	if get_entity_type()!=Entities.Hedge:
-		harvest()
+		use_item(Items.Weird_Substance,5* 2**(num_unlocked(Unlocks.Mazes) - 1))
 		return True
 	pos=(get_pos_x(),get_pos_y())
 	if pos not in table:
